@@ -4,11 +4,12 @@
   "main": "app.ts",
   "scripts": {
     "start": "node dist/app.js",
-    "compile": "tsc",
     "pkg": "pkg app.js -t node18-linux-x64,node18-macos-x64,node18-win-x64 --out-path build",
     "build": "./build.sh",
     "dev": "ts-node app.ts",
-    "dev:w": "tsc -w app.ts"
+    "test": "export NODE_ENV='dev' && jest",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
   },
   "author": {
     "name": "Miloslav Nosek",
@@ -17,9 +18,12 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
+    "@types/jest": "^29.5.2",
     "@types/node": "^20.3.0",
     "@types/ramda": "^0.29.2",
     "@types/shelljs": "^0.8.12",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.3"
   },
